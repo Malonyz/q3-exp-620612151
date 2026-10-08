@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/table";
 import { Trash } from "lucide-react";
 
+
 export function ItemList() {
   const { expenses } = useItemStore();
 
@@ -43,6 +44,7 @@ export function ItemList() {
               </TableRow>
             ) : (
               // replace the following hardcoded row with the dynamic mapping of data items
+              
               <TableRow>
                 <TableCell className="text-muted-foreground">
                   2026-10-05

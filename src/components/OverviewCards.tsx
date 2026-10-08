@@ -4,6 +4,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 export function OverviewCards() {
   const expenses = useItemStore((state) => state.expenses);
   const totalItems = expenses.length;
+  const totalSpent = expenses.reduce((sum, expense) => sum + expense.amount, 0);
+  const averageExpense = totalItems > 0 ? totalSpent / totalItems : 0;
 
   return (
     <div className="grid gap-4 md:grid-cols-3">
@@ -12,7 +14,7 @@ export function OverviewCards() {
           <CardTitle className="text-sm font-medium">Total Spent</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="text-2xl text-red-500 font-bold">฿...</div>
+          <div className="text-2xl text-red-500 font-bold">฿{totalSpent.toFixed(2)}</div>
         </CardContent>
       </Card>
       <Card>
@@ -28,9 +30,11 @@ export function OverviewCards() {
       <Card>
         <CardHeader className="flex flex-row items-center justify-between pb-2">
           <CardTitle className="text-sm font-medium">Average Expense</CardTitle>
+          <CardContent></CardContent>
+          
         </CardHeader>
         <CardContent>
-          <div className="text-2xl text-green-700 font-bold">...</div>
+          <div className="text-2xl text-green-700 font-bold">฿{averageExpense.toFixed(2)}</div>
         </CardContent>
       </Card>
     </div>
