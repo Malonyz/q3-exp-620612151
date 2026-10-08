@@ -41,7 +41,11 @@ export function StudentInfo() {
         <CardTitle>Tunyasopark Saowapark</CardTitle>
         <CardDescription>
           นักศึกษาประจำภาควิชาวิศวกรรมคอมพิวเตอร์ คณะวิศวกรรมศาสตร์ มหาวิทยาลัยเชียงใหม่
+          <Badge variant="secondary">CPE207</Badge>
+          
         </CardDescription>
+      <CardTitle> Major: Computer Engineering </CardTitle>
+      <CardTitle> Email: tunyasopark.saowapark@cmu.ac.th </CardTitle>
         
       </CardHeader>
       <CardFooter>

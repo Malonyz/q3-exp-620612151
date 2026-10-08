@@ -45,26 +45,25 @@ export function ItemList() {
             ) : (
               // replace the following hardcoded row with the dynamic mapping of data items
               
-              <TableRow>
-                <TableCell className="text-muted-foreground">
-                  2026-10-05
-                </TableCell>
-                <TableCell className="font-medium">ซื้อของ 7-11</TableCell>
-                <TableCell>
-                  <Badge variant="outline">Food</Badge>
-                </TableCell>
-                <TableCell className="text-right font-semibold">฿120</TableCell>
-                <TableCell className="text-right">
-                  <Button
-                    className="text-white bg-red-500 hover:bg-red-600 text-white"
-                    variant="ghost"
-                    size="sm"
-                  >
-                    <Trash className="h-4 w-4" />
-                    Delete
-                  </Button>
-                </TableCell>
-              </TableRow>
+              expenses.map((expense) => (
+                <TableRow key={expense.id}>
+                  <TableCell>{new Date(expense.date).toLocaleDateString()}</TableCell>
+                  <TableCell>{expense.title}</TableCell>
+                  <TableCell>
+                    <Badge variant="secondary">{expense.category}</Badge>
+                  </TableCell>
+                  <TableCell className="text-right">{expense.amount} ฿</TableCell>
+                  <TableCell className="text-right">
+                    <Button
+                      variant="destructive"
+                      size="sm"
+                      onClick={() => useItemStore.getState().deleteExpense(expense.id)}
+                    >
+                      <Trash className="h-4 w-4" />
+                    </Button>
+                  </TableCell>
+                </TableRow>
+              ))
             )}
           </TableBody>
         </Table>
