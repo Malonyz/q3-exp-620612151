@@ -19,7 +19,7 @@ export function StudentInfo() {
     
 
     <Drawer swipeDirection="left">
-      <DrawerTrigger render={<Button variant="secondary">Tunyasopark Saowapark</Button>} />
+      <DrawerTrigger render={<Button variant="default">Tunyasopark Saowapark</Button>} />
       <DrawerContent>
         <DrawerHeader>
           <DrawerTitle>ข้อมูลนักศึกษา</DrawerTitle>
